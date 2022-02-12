@@ -33,22 +33,26 @@
       }
     </script>
 
-    <button onclick="post_test()">Post</button>
+    <button onclick="notify()">Noitfy</button>
     <script>
-      async function post_test() {
-        console.log("post start");
-
-        my_data = {
-          name: "Joe",
-          dad: "Father"
-        };
-        text = JSON.stringify(my_data);
+      async function notify() {
+        console.log("notifying starts");
 
         const Http = new XMLHttpRequest();
-        const url= "{{url_for("save_endpoint")}}?".concat("data=".concat(text));
-        console.log(url);
+        const url= "{{url_for("notify_all")}}";
         Http.open("POST", url);
+        Http.send();
+      };
+    </script>
 
+  <button onclick="clear_all()">Clear</button>
+    <script>
+      async function clear_all() {
+        console.log("cleared starts");
+
+        const Http = new XMLHttpRequest();
+        const url= "{{url_for("clear_everything")}}";
+        Http.open("POST", url);
         Http.send();
       };
     </script>
