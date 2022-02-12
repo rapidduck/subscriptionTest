@@ -27,4 +27,4 @@ def sw_js():
     return send_from_directory(".", "sw.js")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
