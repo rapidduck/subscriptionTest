@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "web-push": "^3.4.0"
+    "web-push": "^3.4.5"
   }
 }
