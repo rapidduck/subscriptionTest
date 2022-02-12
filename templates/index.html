@@ -25,12 +25,12 @@
         Http.send();
       }
 
-      if ('serviceWorker' in navigator) {
+<!--      if ('serviceWorker' in navigator) {-->
         addEventListener('load', async () => {
           let sw = await navigator.serviceWorker.register('{{url_for("sw_js")}}');
           console.log(sw);
         });
-      }
+<!--      }-->
     </script>
 
     <button onclick="notify()">Noitfy</button>
