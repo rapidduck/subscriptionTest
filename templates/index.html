@@ -10,7 +10,9 @@
     <button onclick="subscribe()">Subscribe</button>
     <script>
       async function subscribe() {
+      console.log("before ready");
         let sw = await navigator.serviceWorker.ready;
+        console.log("after ready");
         let push = await sw.pushManager.subscribe({
           userVisibleOnly: true,
           applicationServerKey:
@@ -25,15 +27,17 @@
         Http.send();
       }
 
-<!--      if ('serviceWorker' in navigator) {-->
+      if ('serviceWorker' in navigator) {
         addEventListener('load', async () => {
+        console.log("before await");
           let sw = await navigator.serviceWorker.register('{{url_for("sw_js")}}');
+          console.log("await finished");
           console.log(sw);
         });
-<!--      }-->
+      }
     </script>
 
-    <button onclick="notify()">Noitfy</button>
+    <button onclick="notify()">Notify</button>
     <script>
       async function notify() {
         console.log("notifying starts");
