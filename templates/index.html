@@ -17,14 +17,40 @@
             'BFHeG_-cgzrK3xohv4poJ7z4tpX9oDROrj8Rj3fXCjpuuK8pKdNSmF5T2rKKEY0lammQ_2_f1t_NGyG0RqOuynk'
         });
         console.log(JSON.stringify(push));
+        const Http = new XMLHttpRequest();
+        const url= "{{url_for("save_endpoint")}}?".concat("data=".concat(JSON.stringify(push)));
+        console.log(url);
+        Http.open("POST", url);
+
+        Http.send();
       }
 
       if ('serviceWorker' in navigator) {
         addEventListener('load', async () => {
-          let sw = await navigator.serviceWorker.register('./sw.js');
+          let sw = await navigator.serviceWorker.register('{{url_for("sw_js")}}');
           console.log(sw);
         });
       }
+    </script>
+
+    <button onclick="post_test()">Post</button>
+    <script>
+      async function post_test() {
+        console.log("post start");
+
+        my_data = {
+          name: "Joe",
+          dad: "Father"
+        };
+        text = JSON.stringify(my_data);
+
+        const Http = new XMLHttpRequest();
+        const url= "{{url_for("save_endpoint")}}?".concat("data=".concat(text));
+        console.log(url);
+        Http.open("POST", url);
+
+        Http.send();
+      };
     </script>
   </body>
 </html>
