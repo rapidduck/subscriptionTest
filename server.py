@@ -3,9 +3,10 @@ import json
 from flask import Flask, render_template, request, send_from_directory
 from sqlitedict import SqliteDict
 from pywebpush import webpush
-
+from flask_talisman import Talisman
 
 app = Flask(__name__)
+Talisman(app, content_security_policy=None)
 
 @app.route("/")
 def home():
