@@ -13,6 +13,7 @@ webpush.setVapidDetails(
 );
 
 // This is the same output of calling JSON.stringify on a PushSubscription
-const pushSubscription = {"endpoint":"https://fcm.googleapis.com/fcm/send/cYHtWG0LKYc:APA91bEe0TCaGynEP502gKrXmslhNnn9kxSFKjwqU4tq5QYE4_DlDNPEHdz8J2AbytdiyTodQpYxTOfeROjKPx10lRgEZsgmDAglYTDVkF6M3aiwF9XuyWmhTLuWDbn84JU3fARuE2En","expirationTime":null,"keys":{"p256dh":"BAEQ-XVfxi0lxj4ah_-zZH_fgAaTm8e6dctgd7yDXlf00PhRaXeKn78vZBloVof65WtGiU9zmDfBlbFAsgTLcy0","auth":"Rytnctvsw624PvdIlOqWVA"}}
+const pushSubscription = {"endpoint":"https://wns2-par02p.notify.windows.com/w/?token=BQYAAACNY4RzkxRpqUpNaMUtJdQUy3WBd6iz%2fL9mQdcRxeui77cSfJGRKq9xQ5dowGZbeRv5IRaH7nZnfc4dlxM9qyBPrai4%2bPduzoEkGK9IxyNhy8ae5fwzLF7BQJ9CbCnIXw11HvrkfLAWhTalpNjUBRAWHN95UcseiPUVgxwq9P%2fP2DF38B2NyNNcdFLFqigZYH%2fBotGwJVfPVVJOtI05ZomJBDg3m370eTgWkRwhLKh8rZEmGRKZQVi%2fM4SEXX3po2jJuXXk6Lvx3l9bY2M%2fzgYBKEYctLKmubh%2fi7HSh5I4OIPGsDnlEF7wM24PCKuDG3Y%2fCEB7jLzG3V8ctU3MfFxvzRIyWhDnmJRczkPvKnmGnQ%3d%3d","expirationTime":null,"keys":{"p256dh":"BOJ51sGjeqELmwLD7mspo7N5D51ygurj83L0yMa3HdRLDaAjWN9dwWEbwAo_mGV1hA3MVUmQ8MS4KQwtfCqdZzc","auth":"rO4-9PXqxLe91vyf63bscw"}}
 
 webpush.sendNotification(pushSubscription, 'Your Push Payload Text');
+console.log("Performed")
